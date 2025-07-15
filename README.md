@@ -53,7 +53,7 @@ A farmer can:
 **Frontend:**
 - Streamlit (UI)
 - Plotly Express (Charts)
-- Custom CSS (Glassmorphism)
+- Custom CSS (enhanced styling)
 
 **Backend:**
 - PostgreSQL (Database)
@@ -72,19 +72,16 @@ A farmer can:
 - id (Primary Key)  
 - username (Unique)  
 - password  
-- created_at (timestamp)
+  
 
 **Crops Table**
 - id (Primary Key)  
 - name  
 - season  
-- yield_per_acre  
-- added_by (Foreign Key: Users.id)  
-- created_at
 
 ---
 
-## ⚙️ Installation Guide
+## Installation Guide
 
 **Requirements:**
 - Python 3.8 or higher
@@ -148,14 +145,8 @@ Steps to contribute:
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.  
-See the `LICENSE` file for more details.
-
----
-
-## ✅ What's Next?
+## Future Improvements
 
 - Add Admin Dashboard  
 - Implement role-based login  
