@@ -1,9 +1,9 @@
-plotly==5.24.1
-pandas==2.2.2
-psycopg2-binary==2.9.10
-SQLAlchemy==2.0.30  # Often needed with psycopg2
 streamlit==1.40.0
-numpy==2.0.0 # Required by pandas
-
+pandas==2.2.2
+numpy==2.0.0
+plotly==5.24.1
+plotly-express
+psycopg2-binary==2.9.10
+SQLAlchemy==2.0.30
 
 
