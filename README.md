@@ -132,22 +132,10 @@ A farmer can:
 
 ---
 
-## 🤝 Contribution Guidelines
-
-We welcome your contributions!
-
-Steps to contribute:
-1. Fork the repository  
-2. Create a new branch: `git checkout -b feature/yourFeature`  
-3. Commit your changes  
-4. Push your branch: `git push origin feature/yourFeature`  
-5. Open a Pull Request
-
----
 
 
 ## Future Improvements
 
 - Add Admin Dashboard  
 - Implement role-based login  
-- Add SMS alerts for harvest season  
+- Add SMS alerts for harvest season  and much more
