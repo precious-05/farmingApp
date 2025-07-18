@@ -2,6 +2,8 @@ streamlit
 pandas
 numpy
 plotly
+openpyxl
+xlrd
 psycopg2-binary
 SQLAlchemy
 
