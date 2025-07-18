@@ -5,7 +5,7 @@ A bilingual agricultural management web app built using Streamlit and PostgreSQL
 
 
 ##  Table of Contents
-- 🚀 Features
+- Features
 - 🧑‍🌾 Use Case
 - 🛠 Tech Stack
 - 🗃 Database Design
@@ -13,7 +13,6 @@ A bilingual agricultural management web app built using Streamlit and PostgreSQL
 - 🔁 App Flow
 - 🔐 Security & Environment
 - 🤝 Contribution Guidelines
-- 📄 License
 
 
 ## 🚀 Features
