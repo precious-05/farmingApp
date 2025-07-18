@@ -649,7 +649,7 @@ def display_dashboard_english():
             
             # Update layout to match irrigation app
             fig.update_layout(
-                plot_bgcolor='rgba(0,80,32,0.8)',  # Dark green background
+                plot_bgcolor='rgba(0,0,0,0.4)',  # Dark green background
                 paper_bgcolor='rgba(0,80,32,0.8)',
                 font=dict(color="white", family="Arial"),
                 title_font=dict(size=18, color="#FFD700"),  # Gold title
@@ -709,8 +709,8 @@ def display_dashboard_english():
             
             # Update layout to match irrigation app
             fig2.update_layout(
-                plot_bgcolor='rgba(0,80,32,0.8)',
-                paper_bgcolor='rgba(0,80,32,0.8)',
+                plot_bgcolor='rgba(0,0,0,0.4)',
+                paper_bgcolor='rgba(0,0,0,0.4)',
                 font=dict(color="white"),
                 title_font=dict(size=18, color="#FFD700"),
                 
@@ -816,8 +816,8 @@ def display_dashboard_urdu():
             
             # Update layout to match irrigation app
             fig.update_layout(
-                plot_bgcolor='rgba(0,80,32,0.8)',
-                paper_bgcolor='rgba(0,80,32,0.8)',
+                plot_bgcolor='rgba(0,0,0,0.4)',
+                paper_bgcolor='rgba(0,0,0,0.4)',
                 font=dict(color="white", family="Arial"),
                 title_font=dict(size=18, color="#FFD700"),
                 
@@ -871,8 +871,8 @@ def display_dashboard_urdu():
             )
             
             fig2.update_layout(
-                plot_bgcolor='rgba(0,80,32,0.8)',
-                paper_bgcolor='rgba(0,80,32,0.8)',
+                plot_bgcolor='rgba(0,0,0,0.4)',
+                paper_bgcolor='rgba(0,0,0,0.3)',
                 font=dict(color="white"),
                 title_font=dict(size=18, color="#FFD700"),
                 
