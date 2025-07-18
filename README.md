@@ -66,20 +66,6 @@ A farmer can:
 
 ---
 
-## 🗃 Database Design
-
-**Users Table**
-- id (Primary Key)  
-- username (Unique)  
-- password  
-  
-
-**Crops Table**
-- id (Primary Key)  
-- name  
-- season  
-
----
 
 ## Installation Guide
 
