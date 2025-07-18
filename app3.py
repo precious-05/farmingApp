@@ -595,7 +595,7 @@ def display_dashboard_english():
         with col1:
             st.markdown("""
             <div style="
-                background: rgba(0, 80, 32, 0.7);
+                background: rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
                 padding: 15px;
                 text-align: center;
@@ -609,7 +609,7 @@ def display_dashboard_english():
         with col2:
             st.markdown("""
             <div style="
-                background: rgba(0, 80, 32, 0.7);
+                background: rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
                 padding: 15px;
                 text-align: center;
@@ -623,7 +623,7 @@ def display_dashboard_english():
         with col3:
             st.markdown("""
             <div style="
-                background: rgba(0, 80, 32, 0.7);
+                background: rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
                 padding: 15px;
                 text-align: center;
