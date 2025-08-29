@@ -1127,7 +1127,7 @@ def display_crop_management_english():
             
 def main():
     set_premium_ui()
-    set_background_and_styles("f1.png")   #ap9.jpg
+    set_background_and_styles("f2.png")   #ap9.jpg
     
     
     # Initialize session state
@@ -1236,4 +1236,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
