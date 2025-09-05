@@ -650,7 +650,7 @@ def display_dashboard_english():
             # Update layout to match irrigation app
             fig.update_layout(
                 plot_bgcolor='rgba(0,0,0,0.4)',  # Dark green background
-                paper_bgcolor='rgba(0,80,32,0.8)',
+                paper_bgcolor='rgba(0,0,0,0.5)',
                 font=dict(color="white", family="Arial"),
                 title_font=dict(size=18, color="#FFD700"),  # Gold title
                 
@@ -1236,5 +1236,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
