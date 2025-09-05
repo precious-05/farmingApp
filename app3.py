@@ -773,13 +773,12 @@ def load_css():
             }
 
             .dashboard-card:hover:after {
-                content: "View";
-                color: white;
+                
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 1.5rem;
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 0, 0, 0.2);
             }
             
             .dashboard-card-content {
@@ -882,6 +881,44 @@ def load_css():
                 color: #fff;
             }
             
+            
+            /* Metrics styling */
+            [data-testid="stMetric"] {
+                background-color: rgba(0, 0, 0, 0.7) !important;
+                border-radius: 10px;
+                padding: 15px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            [data-testid="stMetricLabel"] {
+                color: #FFFFFF !important;
+                font-size: 16px !important;
+                font-weight: bold !important;
+            }
+
+            [data-testid="stMetricValue"] {
+                color: #FFD700 !important;
+                font-size: 24px !important;
+                font-weight: bold !important;
+            }
+
+            [data-testid="stMetricDelta"] {
+                font-size: 14px !important;
+            }
+
+            /* Positive delta */
+            [data-testid="stMetricDelta"] svg {
+                color: #00FF00 !important;
+            }
+
+            /* Negative delta */
+            [data-testid="stMetricDelta"] svg[style*="color: rgb(255, 43, 43)"] {
+                color: #FF0000 !important;
+            }    
+            
+            
+            
+
             
         </style>
     """, unsafe_allow_html=True)
@@ -1226,7 +1263,7 @@ def display_dashboard_english():
     df = get_analytics_data_english()
     
     with st.container():
-        st.header("Analytics Dashboard")
+        st.markdown('<h1 style="color: #FFD700;">Analytics Dashboard</h1>', unsafe_allow_html=True)
         
         # Show loader while data is loading
         if df.empty:
@@ -1243,7 +1280,7 @@ def display_dashboard_english():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>Total Crops</h3>
-                    <div class="value">{len(df)}</div>
+                    <div class="value" style="color: #FF0000;">{len(df)}</div>
                     <p>Different types of crops in your system</p>
                 </div>
             </div>
@@ -1255,7 +1292,7 @@ def display_dashboard_english():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>Average Yield</h3>
-                    <div class="value">{avg_yield:.1f}</div>
+                    <div class="value" style="color: #FF0000;">{avg_yield:.1f}</div>
                     <p>kg per acre across all crops</p>
                 </div>
             </div>
@@ -1267,7 +1304,7 @@ def display_dashboard_english():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>Total Yield</h3>
-                    <div class="value">{total_yield:.0f}</div>
+                    <div class="value" style="color: #FF0000;">{total_yield:.0f}</div>
                     <p>kg across all your farms</p>
                 </div>
             </div>
@@ -1275,10 +1312,10 @@ def display_dashboard_english():
         
         col1, col2 = st.columns(2)
         with col1:
-            st.subheader("Filter by Season")
+            st.markdown('<h2 style="color: #FFD700;">Filter by Season</h2>', unsafe_allow_html=True)
             season = st.selectbox("", ["All", "Rabi", "Kharif"], key="season_filter_en")
         with col2:
-            st.subheader("Filter by Crop Name")
+            st.markdown('<h2 style="color: #FFD700;">Filter by Crop Name</h2>', unsafe_allow_html=True)
             crop_name = st.selectbox("", ["All"] + list(df['Name'].unique()), key="crop_filter_en")
 
         if season != "All":
@@ -1286,7 +1323,7 @@ def display_dashboard_english():
         if crop_name != "All":
             df = df[df["Name"] == crop_name]
 
-        st.subheader("Key Metrics")
+        st.markdown('<h2 style="color: #FFD700;">Key Metrics</h2>', unsafe_allow_html=True)
         
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -1360,8 +1397,7 @@ def display_dashboard_urdu():
     df = get_analytics_data_urdu()
     
     with st.container():
-        st.header("تجزئیاتی ڈیش بورڈ")
-        
+        st.markdown('<h1 style="color: #FFD700;"> تجزئیاتی ڈیش بورڈ</h1>', unsafe_allow_html=True)
         if df.empty:
             st.info("ڈیش بورڈ کے لیے کوئی ڈیٹا دستیاب نہیں")
             return
@@ -1373,7 +1409,7 @@ def display_dashboard_urdu():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>کل فصلیں</h3>
-                    <div class="value">{len(df)}</div>
+                    <div class="value" style="color: #FFD700;">{len(df)}</div>
                     <p>آپ کے نظام میں مختلف قسم کی فصلیں</p>
                 </div>
             </div>
@@ -1385,7 +1421,7 @@ def display_dashboard_urdu():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>اوسط پیداوار</h3>
-                    <div class="value">{avg_yield:.1f}</div>
+                    <div class="value" style="color: #FFD700;">{avg_yield:.1f}</div>
                     <p>تمام فصلوں میں فی ایکڑ کلوگرام</p>
                 </div>
             </div>
@@ -1397,7 +1433,7 @@ def display_dashboard_urdu():
             <div class="dashboard-card">
                 <div class="dashboard-card-content">
                     <h3>کل پیداوار</h3>
-                    <div class="value">{total_yield:.0f}</div>
+                    <div class="value" style="color: #FFD700;">{total_yield:.0f}</div>
                     <p>آپ کے تمام فارموں میں کلوگرام</p>
                 </div>
             </div>
@@ -1405,18 +1441,18 @@ def display_dashboard_urdu():
         
         col1, col2 = st.columns(2)
         with col1:
-            st.subheader("موسم کے اعتبار سے فلٹر کریں")
+            st.markdown('<h2 style="color: #FFD700;">موسم کے اعتبار سے فلٹر کریں </h2>', unsafe_allow_html=True)
             season = st.selectbox("", ["تمام", "ربی", "خریف"], key="season_filter_urdu")
         with col2:
-            st.subheader("فصل کے اعتبار سے فلٹر کریں")
+            st.markdown('<h2 style="color: #FFD700;">فصل کے اعتبار سے فلٹر کریں</h2>', unsafe_allow_html=True)
             crop_name = st.selectbox("", ["تمام"] + list(df['نام'].unique()), key="crop_filter_urdu")
 
         if season != "تمام":
             df = df[df["موسم"] == season]
         if crop_name != "تمام":
             df = df[df["نام"] == crop_name]
-
-        st.subheader("اہم اعداد و شمار")
+        st.markdown('<h2 style="color: #FFD700;">اہم اعداد و شمار</h2>', unsafe_allow_html=True)
+        
         
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -1600,7 +1636,8 @@ def display_export_english():
         
         with tab1:
             # Display card for Irrigation Data
-            st.subheader("Export Irrigation Data")
+            
+            st.markdown('<h2 style="color: #FFD700;">Export Irrigation Data</h2>', unsafe_allow_html=True)
             
             # Get irrigation data
             conn = connect_db()
@@ -1621,11 +1658,11 @@ def display_export_english():
                 
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.subheader("Irrigation Data:")
+                    st.markdown('<h2 style="color: #FFD700;">Irrigation Data:</h2>', unsafe_allow_html=True)
                     st.dataframe(irrigation_data)
                 
                 with col2:
-                    st.subheader("Export Options:")
+                    st.markdown('<h2 style="color: #FFD700;">Export Options:</h2>', unsafe_allow_html=True)
                     
                     # Convert to CSV and Excel
                     csv = irrigation_data.to_csv(index=False).encode('utf-8')
@@ -1656,7 +1693,7 @@ def display_export_english():
         
         with tab2:
             # Display card for Crops Data
-            st.subheader("Export Crops Data")
+            st.markdown('<h2 style="color: #FFD700;">Export Crops Data</h2>', unsafe_allow_html=True)
             
             # Get crops data
             crops = get_crops()
@@ -1666,11 +1703,12 @@ def display_export_english():
                 
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.subheader("Crops Data:")
+                    st.markdown('<h2 style="color: #FFD700;">Crops Data</h2>', unsafe_allow_html=True)
                     st.dataframe(df)
                 
                 with col2:
-                    st.subheader("Export Options:")
+                    st.markdown('<h2 style="color: #FFD700;">Export Options</h2>', unsafe_allow_html=True)
+                    
                     
                     # Convert to CSV and Excel
                     csv = df.to_csv(index=False).encode('utf-8')
@@ -1711,7 +1749,7 @@ def display_export_urdu():
         
         
         with tab1:
-            st.subheader("آبپاشی کا ڈیٹا برآمد کریں")
+            st.markdown('<h2 style="color: #FFD700;">آبپاشی کا ڈیٹا برآمد کریں</h2>', unsafe_allow_html=True)
             
             # Get irrigation data
             conn = connect_db()
@@ -1732,11 +1770,13 @@ def display_export_urdu():
                 
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.subheader("آبپاشی کا ڈیٹا:")
+                    st.markdown('<h2 style="color: #FFD700;">آبپاشی کا ڈیٹا:</h2>', unsafe_allow_html=True)
+                    
                     st.dataframe(irrigation_data)
                 
                 with col2:
-                    st.subheader("برآمد کے اختیارات:")
+                    st.markdown('<h2 style="color: #FFD700;">برآمد کے اختیارات</h2>', unsafe_allow_html=True)
+                    
                     
                     # Convert to CSV and Excel
                     csv = irrigation_data.to_csv(index=False).encode('utf-8')
@@ -1767,7 +1807,8 @@ def display_export_urdu():
         
         with tab2:
             # Display card for Crops Data
-            st.subheader("فصلوں کا ڈیٹا برآمد کریں")
+           
+            st.markdown('<h2 style="color: #FFD700;">فصلوں کا ڈیٹا برآمد کریں</h2>', unsafe_allow_html=True)
             
             # Get crops data
             crops = get_crops()
@@ -1777,11 +1818,12 @@ def display_export_urdu():
                 
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.subheader("فصلوں کا ڈیٹا:")
+                    st.markdown('<h2 style="color: #FFD700;">فصلوں کا ڈیٹا:</h2>', unsafe_allow_html=True)
+                    
                     st.dataframe(df)
                 
                 with col2:
-                    st.subheader("برآمد کے اختیارات:")
+                    st.markdown('<h2 style="color: #FFD700;">برآمد کے اختیارات</h2>', unsafe_allow_html=True)
                     
                     # Convert to CSV and Excel
                     csv = df.to_csv(index=False).encode('utf-8')
