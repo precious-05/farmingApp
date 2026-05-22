@@ -145,11 +145,11 @@ pip install streamlit psycopg2-binary pandas numpy plotly openpyxl
 
 4. Database credentials (currently hardcoded - update these):
 ```python
-host="ep-falling-pond-addqml8d-pooler.c-2.us-east-1.aws.neon.tech"
-database="neondb"
-user="neondb_owner"
-password="npg_emHPU1b7qSOL"
-port="5432"
+host="your_host_name"
+database="your_database_name"
+user="your_username"
+password="your_password"
+port="port no"
 ```
 
 5. Place background images in the project directory:
