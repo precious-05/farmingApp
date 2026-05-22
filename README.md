@@ -1,4 +1,3 @@
-```markdown
 # 🌱 Prosperous Farmer - Agricultural Management System
 
 A comprehensive bilingual agricultural management web application built using Streamlit and PostgreSQL, designed to help farmers with smart irrigation control, crop management, yield analytics, water conservation tips, and data export functionality. Supports both English and Urdu interfaces.
@@ -134,7 +133,6 @@ A farmer can:
 ```bash
 git clone https://github.com/yourusername/prosperous-farmer.git
 cd prosperous-farmer
-```
 
 2. Install required Python packages:
 ```bash
